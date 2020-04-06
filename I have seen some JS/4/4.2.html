@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Функции в JavaScript</title>
+
+    <script type="text/javascript">
+
+        let name;
+        let sname;
+        let age;
+
+        function ask() {
+            name = prompt("Введите свое имя:");
+            sname = prompt("Введите свою фамилию:");
+            age = prompt("Введите свой возраст:");
+        }
+
+        function say() {
+            document.write("Имя: " + name + "<br />");
+            document.write("Фамилия: " + sname + "<br />");
+            document.write("Возраст: " + age + "<br />");
+            document.write("<hr/>");
+        }
+
+        // Вызов функций.
+        do{
+            ask();
+            say();
+            repeater = confirm("Пройти заполнение еще раз?");
+        } while(repeater);
+        
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

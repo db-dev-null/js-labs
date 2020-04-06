@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Конструктор Object()</title>
+    <script type="text/javascript">
+
+        const point = Object.create({
+            x: 10,
+            y: 15,
+            f: () => document.write('<p>x = ' + point.x + '<br/>y = ' + point.y + '</p>')
+        });
+        point.f();
+    </script>
+</head>

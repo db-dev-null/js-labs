@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lab</title>
+    <script type="text/javascript">
+        const paths = {
+            Microsoft: './images/microsoft.png',
+            MSI: './images/msi.png'
+        };
+        const human = {
+            firstName: 'Alex',
+            secondName: 'Jazun',
+            age: 27,
+            occupation: {
+                company: 'Microsoft',
+                position: 'developer'
+            },
+            show: () => {
+                document.write(JSON.stringify(human));
+                const path = paths[human.occupation.company];
+                document.write('<img src=' + path + ' width="152" height="38"/>')
+            },
+            changeCompany(company) {
+                this.occupation.company = company
+            }
+        };
+        human.show();
+        human.changeCompany('MSI');
+        human.show();
+
+    </script>
+</head>
+</html>

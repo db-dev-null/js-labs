@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>оператор return</title>
+    <script type="text/javascript">
+        function add(a, b) {
+            return a + b;
+        }
+        function sub(a, b) {
+            return a - b;
+        }
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            return a / b;
+        }
+        function sqrt(a){
+            return Math.sqrt(a);
+        }
+        function pow(a){
+            return Math.pow(a,2);
+        }
+        var operand1 = prompt("Введите первое число: ");
+        var sign = prompt("Введите знак арифметической операции: + - * / ^ sqrt");
+        if(sign !="^" && sign!="sqrt")
+        {
+            var operand2 = prompt("Введите второе число: ");
+        }
+        var result = undefined;
+        var sign2 = "^"
+        var sign3 = "sqrt "
+        operand1 = parseInt(operand1);
+        
+        
+        if(sign !="^"||sign!="sqrt")
+        {
+            operand2 = parseInt(operand2);
+        }
+            
+        
+       
+
+        switch (sign) {
+            case "+":
+                result = add(operand1, operand2);
+                break;
+            case "-":
+                result = sub(operand1, operand2);
+                break;
+            case "*":
+                result = mul(operand1, operand2);
+                break;
+            case "/":
+                result = div(operand1, operand2);
+                break;
+            case "^":
+                result = pow(operand1);
+                break;
+            case "sqrt":
+                result = sqrt(operand1);
+                break;
+            default:
+                document.write("<p><b style='color:red'>" + sign + "</b> - не является знаком арифметической операции.");
+        }
+
+        if (result != undefined && sign !="^" && sign!="sqrt")
+        {
+            document.write("<p>" + operand1 + " " + sign + " " + operand2 + " = " + result);
+        }else if(result != undefined && sign=="^")
+        {
+                document.write("<p>" + operand1 + " " + sign + " " + 2 + " = " + result);
+        } else
+        {
+            document.write("<p>" + sign + "" + operand1 + "  = " + result);
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>lab</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+<!-- Задание 6. Создать в html форму с предложением ввести личные данные пользователя. 
+Добавить в код скрипт который выводи в модальном окне информацию которую ввел пользователь. -->
+
+<h1>Заполните анкету</h1>
+<form name="Sel1">
+    <table>
+        <tr>
+            <td><b>Фамилия:</b></td>
+            <td><input name="Family" size="20"
+                       onBlur="this.value=this.value.toUpperCase()"></td>
+        </tr>
+        <tr>
+            <td><b>Имя:</b></td>
+            <td><input name="Name" size="20'
+                       onBlur="this.value=this.value.toUpperCase()"></td>
+        </tr>
+        <tr>
+            <td><b>Возраст:</b></td>
+            <td><input name="Age" size="3" value="18"
+                       onBlur="this.value=CheckAge(this.value)"
+                       onFocus="this.select()"></td>
+        </tr>
+        <tr>
+            <td><b>Телефон:</b>></td>
+            <td><input name="Phone" size="10"></td>
+        </tr>
+    </table>
+
+    <input type="button" value="Готово" onClick="Complete();">
+    <input type="reset" value="Сброс">
+
+    <script>
+        function Complete() {
+            const result = "Фамилия: " + document.Sel1.Family.value +
+                "\nИмя: " + document.Sel1.Name.value +
+                "\nВозраст: " + document.Sel1.Age.value +
+                "\nТелефон: " + document.Sel1.Phone.value;
+            alert(result);
+        }
+
+        const CheckAge = (age) => age < 18 ? "18" : age;
+    </script>
+</form>
+</body>
+</html>

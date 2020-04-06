@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Туризм</title>
+</head>
+<body>
+<h1 style="text-align: center;">Путешествуйте!</h1>
+
+<script type="text/javascript">
+
+    let vacation = {
+        turkey: {
+            price: 2800,
+            img: "turkey.jpg",
+            description:
+                "Турция – государство на юго-востоке Европы и юго-западе Азии, культура которого сочетает древнегреческие, персидские, римские, византийские и османские традиции."
+        },
+        egypt: {
+            price: 2000,
+            img: "egipet.jpg",
+            description:
+                "Египет – страна в Северо-Восточной Африке и на Ближнем Востоке. О ее богатой истории, насчитывающей более пяти тысяч лет, напоминают археологические памятники в плодородной долине реки Нил, среди которых пирамиды Гизы, Большой сфинкс, а также Карнакский храм"
+        },
+        spain: {
+            price: 4500,
+            img: "spain.jpg",
+            description:
+                "Испания – европейская страна, расположенная на Пиренейском полуострове. Территория Испании разделена на 17 автономных регионов. В столице страны, Мадриде, находятся Королевский дворец и музей Прадо, где хранятся произведения европейских мастеров."
+        },
+        france: {
+            price: 3500,
+            img: "france.jpg",
+            description:
+                "Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря."
+        },
+        somali: {
+            price: 1000,
+            img: "somali.jpg",
+            description:
+                "Республика Сомали́ — восточноафриканское государство. В результате гражданской войны и деятельности сепаратистов Сомали на долгое время фактически прекратило своё существование и распалось на множество частей."
+        }
+    };
+
+    document.write("<div class='container'>");
+    for (key in vacation) {
+        document.write(
+            "<div class='card' style='width: 18rem;'><img src='" +
+            vacation[key].img +
+            "'  class='card-img-top' alt='...'> <div class='card-body'> <p class='card-text'> Цена тура " +
+            vacation[key].price +
+            " грн. за 1 день </p> <p> " +
+            vacation[key].description +
+            "</p> </div> </div>"
+        );
+
+    }
+    document.write("</div>")
+
+    function UserChoice() {
+        let country = prompt(
+            "Куда летите? Можем предложить следующие варианты turkey, egypt, spain, france, somali"
+        );
+
+        let people = +prompt("Сколько человек летят?");
+        let days = +prompt("На сколько дней хотите полететь?");
+
+        vacation.calc = (people, days, country) => people * days * vacation[country].price;
+
+        document.write("Цена: ")
+        document.write(vacation.calc(people, days, country))
+    }
+
+</script>
+<input type="button" value="Расчитать цену" class="btn btn-primary" onclick="UserChoice()">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
+

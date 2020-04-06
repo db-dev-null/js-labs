@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Задание 5. Создать в html форму с кнопкой и выпадающим списком состоящим из
+     ссылок на различные сайты.  Повесить на кнопку обработку события,
+      определяющую переход на выбранный из списка сайт. -->
+<head>
+    <title>lab</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h1>Динамическое заполнение списка</h1>
+<form name="Sel">
+    <select name="ListOfLinks"> </select>
+    <input
+            type="button"
+            value="Переход"
+            onClick="window.location.href=document.links[Sel.ListOfLinks.selectedIndex];"
+    />
+</form>
+<a href="https://rozetka.com.ua/"></a>
+<a href="https://allo.ua/"></a>
+<a href="https://www.olx.ua/"></a>
+<a href="https://www.zieit.edu.ua/"></a>
+<script>
+    for (i = 0; i < document.links.length; i++) {
+        document.Sel.ListOfLinks.options[i] = new Option(document.links[i]);
+    }
+    document.Sel.ListOfLinks.selectedIndex = 0;
+</script>
+</body>
+</html>

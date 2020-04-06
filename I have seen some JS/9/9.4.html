@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>lab</title>
+    <!-- Задание 4. Создать в html форму с кнопкой и списком.
+        Повесить на кнопку обработку события, определяющую что выбрал пользователь из списка. -->
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <script>
+        function btnClick2() {
+            const selectedIndex = document.Test2.Item.selectedIndex;
+            let text = "";
+            text = "Предложено " + document.Test2.Item.length + " напитков" +
+                "\nВыбран " + document.Test2.Item.options[selectedIndex].text +
+                " (value= " + document.Test2.Item.options[selectedIndex].value +
+                ", index= " + document.Test2.Item.options[selectedIndex].index + ")";
+            if (document.Test2.Item.options[selectedIndex].defaultSelected) {
+                text += "\nЭтот напиток выбирается по умолчанию";
+            }
+            alert(text);
+        }
+
+    </script>
+</head>
+<body>
+<h1>Работа с готовым списком</h1>
+<form NAME="Test2">
+    <select NAME="Item" SIZE=5>
+        <option value="tea" selected>Чай</option>
+        <option value="coffee">Кофе</option>
+        <option value="milk">Молоко</option>
+        <option value="cacao">Какао</option>
+        <option value="juice">Сок</option>
+    </select>
+    <input type="button" value="Пусть кофе"
+           onClick="Test2.Item.options[1].selected=true;">
+    <input type="button" value="Посмотрим"
+           onClick="btnClick2();">
+</form>
+</body>
+</html>

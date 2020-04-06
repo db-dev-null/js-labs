@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Объекты</title>
+    <script type="text/javascript">
+        const instance = {
+            propertyA: 222,
+            propertyB: 444
+        };
+        const write = (instance) => {
+            document.write('<p>' + JSON.stringify(instance) + '</p>');
+            document.write('<hr/>');
+        };
+        write(instance);
+        instance.propertyA = 333;
+        instance['propertyB'] = 555;
+        write(instance);
+        document.write('<p>instance = ' + instance + '</p>');
+    </script>
+</head>
+<body>
+</body>

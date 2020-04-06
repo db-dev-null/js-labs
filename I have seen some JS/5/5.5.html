@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lab</title>
+    <script type="text/javascript">
+        const human = Object.create(null);
+        human.firstName = 'Alex';
+        human.secondName = 'Jazun';
+        human.age = 27;
+        human.occupation = Object.create(null);
+        human.occupation.company = 'Microsoft';
+        human.occupation.position = 'Web Developer';
+        document.write(JSON.stringify(human, null, '\t'));
+    </script>
+</head>
+</html>

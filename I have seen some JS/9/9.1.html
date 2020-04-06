@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lab</title>
+    <meta http-equiv="Content-Type"
+    content="text/html;charset=utf-8">
+    <script type="text/javascript">
+
+// Задание 1. Создать в html форму с кнопкой и сделать перехват события по
+// нажатию на кнопку с выводом текстового сообщения. 
+
+        function btnClick(){
+            let buttonValue = document.Test.ButtonName.value;
+            let buttonName = document.Test.ButtonName.name;
+            document.getElementById('ex1').innerHTML="<hr>" + "Вы нажали кнопку: " +
+            buttonValue.bold() + " с именем - " + buttonName.bold() + "</hr>";
+        }
+    </script>
+
+</head>
+<body>
+<h1> Нажатие кнопки </h1>
+<div id="ex1"> </div>
+<form name="Test">
+    <input type="button" name='ButtonName' value="Нажми на меня!"
+        onclick="btnClick();">
+</form>
+</body>
+</html>
